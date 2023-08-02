@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -38,6 +39,7 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
+                 GoRouter.of(context).go('/pdf_viewer');
                 // Implement login button functionality here
               },
               child: Text('Login'),
