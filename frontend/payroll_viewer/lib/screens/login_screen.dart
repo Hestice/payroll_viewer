@@ -46,6 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 fit: BoxFit.fitWidth,
               ),
             ),
+            
             Align(
               alignment: Alignment.topCenter,
               child: Column(
@@ -55,13 +56,31 @@ class _LoginScreenState extends State<LoginScreen> {
                     'assets/images/ncca_logo.png',
                     height: 150,
                   ),
-                  const SizedBox(height: 10),
                   const Text(
-                    'Welcome back, you\'ve been missed!',
+                    'PAYROLL VIEWER',
                     style: TextStyle(color: Color(0xFF424242), fontSize: 16),
                   ),
                   const SizedBox(height: 30),
                 ],
+              ),
+            ),
+            Positioned(
+              top: 10,
+              left: 5,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Color(0xFF4890D2),
+                  shape: CircleBorder(),
+                ),
+                onPressed: () {
+                  // Implement the back button functionality here
+                  print('Back Button Clicked');
+                },
+                child: Icon(
+                  Icons.arrow_back,
+                  color: Colors.white,
+                  size: 24,
+                ),
               ),
             ),
             Positioned(
