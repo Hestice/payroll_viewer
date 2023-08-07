@@ -98,7 +98,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                            //Text field for username/email
+                      
+                          //Text field for username/email
                           TextFormField(
                             controller: emailController,
                             obscureText: false,
@@ -209,6 +210,32 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             ),
                           ),
+                          SizedBox(height: 20),
+                          Align(
+                            alignment: Alignment.center,
+                            child: Text(
+                            'Don\'t have an account yet?',
+                             style: TextStyle(
+                                  color: Colors.white),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              print('Create an account? Clicked');
+                            },
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                'Create An Account',
+                                style: TextStyle(
+                                  decoration: TextDecoration.underline,
+                                  decorationColor: Colors.white,
+                                  color: Colors.white
+                                ),
+                              ),
+                            ),
+                          ),
+                          
                         ],
                       ),
                     ),

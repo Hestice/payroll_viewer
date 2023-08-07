@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:payroll_viewer/screens/pdf_view.dart';
+import 'package:payroll_viewer/screens/home_screen.dart';
 import '../screens/login_screen.dart';
 
 var router = GoRouter(
@@ -10,7 +10,7 @@ var router = GoRouter(
     ),
     GoRoute(
       path: '/pdf_viewer',
-      builder: (context, state) => PdfViewerScreen(path: 'pathtopdf',), 
+      builder: (context, state) => HomeScreen(),
     ),
     //add other paths and routes to builders here
   ]
