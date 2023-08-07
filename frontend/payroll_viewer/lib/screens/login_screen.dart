@@ -189,7 +189,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           //Login button
                           ElevatedButton(
                             onPressed: () {
-                              // GoRouter.of(context).go('/pdf_viewer');
+                              GoRouter.of(context).go('/home_screen');
                               // Implement login button functionality here
                             },
                             style: ElevatedButton.styleFrom(
