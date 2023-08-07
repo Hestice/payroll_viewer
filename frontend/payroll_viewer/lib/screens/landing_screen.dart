@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LandingScreen extends StatefulWidget {
   @override
@@ -44,16 +45,46 @@ class _LandingScreenState extends State<LandingScreen> {
               left: 0,
               right: 0,
               bottom: _isBottomContainerVisible ? 0 : -300,
-              child: ClipRRect( // Wrap the container with ClipRRect for rounded borders
+              child: ClipRRect(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(60)),
                 child: AnimatedContainer(
                   duration: Duration(milliseconds: 500),
                   height: 300,
                   color: Colors.white,
                   padding: EdgeInsets.fromLTRB(20, 40, 20, 16),
-                  child: Text(
-                    'Hello, this is the bottom container!',
-                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  child: Stack( // Wrap the Column with a Stack
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'WELCOME TO THE NCCA PAYROLL VIEWER MOBILE APP!',
+                            style: TextStyle(fontSize: 18, color: Colors.black),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                      Positioned(
+                        bottom: 10,
+                        right: 5,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Color(0xFF4890D2),
+                            shape: CircleBorder(),
+                          ),
+                          onPressed: () {
+                            GoRouter.of(context).go('/login_screen');
+                            print('Next Button Clicked');
+                          },
+                          child: Icon(
+                            Icons.arrow_forward,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

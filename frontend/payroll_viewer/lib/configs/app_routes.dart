@@ -10,6 +10,10 @@ var router = GoRouter(
       builder: (context, state) => LandingScreen(), //removed constructor property. Should be const, when we start developing with forms and backend.
     ),
     GoRoute(
+      path: '/login_screen',
+      builder: (context, state) => LoginScreen(),
+    ),
+    GoRoute(
       path: '/home_screen',
       builder: (context, state) => HomeScreen(),
     ),
