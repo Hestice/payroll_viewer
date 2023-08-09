@@ -51,7 +51,7 @@ class _LandingScreenState extends State<LandingScreen> {
                   duration: Duration(milliseconds: 500),
                   height: 300,
                   color: Colors.white,
-                  padding: EdgeInsets.fromLTRB(20, 40, 20, 16),
+                  padding: EdgeInsets.fromLTRB(40, 40, 40, 16),
                   child: Stack( // Wrap the Column with a Stack
                     children: [
                       Column(
@@ -59,15 +59,15 @@ class _LandingScreenState extends State<LandingScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'WELCOME TO THE NCCA PAYROLL VIEWER MOBILE APP!',
+                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare at enim eleifend euismod. Donec et purus ornare, imperdiet velit ut, luctus risus. Cras ante eros, ',
                             style: TextStyle(fontSize: 18, color: Colors.black),
-                            textAlign: TextAlign.center,
+                            textAlign: TextAlign.justify,
                           ),
                         ],
                       ),
                       Positioned(
                         bottom: 10,
-                        right: 5,
+                        right: -10,
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             primary: Color(0xFF4890D2),
