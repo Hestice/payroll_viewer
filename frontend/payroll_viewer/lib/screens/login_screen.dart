@@ -162,6 +162,8 @@ class _LoginScreenState extends State<LoginScreen> {
               GestureDetector(
                 onTap: () {
                   print('Create an account? Clicked');
+                  GoRouter.of(context).go('/create_account_screen');
+
                 },
                 child: Align(
                   alignment: Alignment.bottomCenter,
