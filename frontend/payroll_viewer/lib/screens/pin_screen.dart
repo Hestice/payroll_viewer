@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../common/pin_display_common.dart';
 class PinScreen extends StatefulWidget {
   const PinScreen({super.key});
 
@@ -43,7 +44,7 @@ class _PinScreenScreenState extends State<PinScreen> {
                 ),
                 Column(
                   children: [
-                    SizedBox(height: 40,),
+                    SizedBox(height: 70,),
                     Align(
                       alignment: Alignment.topCenter,
                         child: Image(
@@ -59,6 +60,7 @@ class _PinScreenScreenState extends State<PinScreen> {
                       ),
                     
                     Container(
+                      margin: new EdgeInsets.symmetric(horizontal: 30.0),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
@@ -68,6 +70,7 @@ class _PinScreenScreenState extends State<PinScreen> {
                       ),
                       child: PinInputWidget(),
                     ),
+                    
                   ]
                 ),
             ]
@@ -100,66 +103,66 @@ class _PinInputWidgetState extends State<PinInputWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.all(16.0),
-          child: Text(
-            'Enter your PIN:',
-            style: TextStyle(fontSize: 18.0, color: Color(0xFF4890D2)),
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 68),
+      child: Column(
+        children: [
+          SizedBox(height: 20,),
+          //this is the pin input display
+          Container(
+            padding: EdgeInsets.all(16.0),
+            child: PinDisplay(pin: pin),
           ),
-        ),
-        Container(
-          padding: EdgeInsets.all(16.0),
-          child: Text(
-            pin,
-            style: TextStyle(fontSize: 32.0, letterSpacing: 16.0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              for (var i = 1; i <= 3; i++)
+                PinButton(
+                  text: '$i',
+                  onPressed: () => _handleKeyPress('$i'),
+                ),
+            ],
           ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            for (var i = 1; i <= 3; i++)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              for (var i = 4; i <= 6; i++)
+                PinButton(
+                  text: '$i',
+                  onPressed: () => _handleKeyPress('$i'),
+                ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              for (var i = 7; i <= 9; i++)
+                PinButton(
+                  text: '$i',
+                  onPressed: () => _handleKeyPress('$i'),
+                ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(width: 65.0), 
               PinButton(
-                text: '$i',
-                onPressed: () => _handleKeyPress('$i'),
+                text: '0',
+                onPressed: () => _handleKeyPress('0'),
               ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            for (var i = 4; i <= 6; i++)
-              PinButton(
-                text: '$i',
-                onPressed: () => _handleKeyPress('$i'),
-              ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            for (var i = 7; i <= 9; i++)
-              PinButton(
-                text: '$i',
-                onPressed: () => _handleKeyPress('$i'),
-              ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            PinButton(
-              text: '0',
-              onPressed: () => _handleKeyPress('0'),
-            ),
-            PinButton(
-              text: 'Delete',
-              onPressed: () => _handleKeyPress('delete'),
-            ),
-          ],
-        ),
-      ],
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal:8.5), // Adjust padding as needed
+                child: IconButton(
+                  icon: Icon(Icons.arrow_back),
+                  onPressed: () => _handleKeyPress('delete'),
+                ),
+              )
+            ],
+          ),
+          SizedBox(height: 40,),
+        ],
+      ),
     );
   }
 }
@@ -173,12 +176,12 @@ class PinButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8.0),
+      margin: EdgeInsets.symmetric( vertical: 6, horizontal: 0),
       child: ElevatedButton(
         onPressed: onPressed,
-        child: Text(text, style: TextStyle(fontSize: 20.0)),
+        child: Text(text, style: TextStyle(fontSize: 15.0)),
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(10.0),
           shape: CircleBorder(),
         ),
       ),

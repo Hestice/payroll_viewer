@@ -49,7 +49,7 @@ class _BuildShadowedTextFieldCommonState
               BoxShadow(
                 color: Colors.black.withOpacity(0.1),
                 blurRadius: 7.0,
-                offset: Offset(0, 4),
+                offset: Offset(0, 3),
               ),
             ],
           ),
