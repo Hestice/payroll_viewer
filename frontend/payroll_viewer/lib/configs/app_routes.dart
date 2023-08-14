@@ -3,6 +3,7 @@ import 'package:payroll_viewer/screens/home_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/landing_screen.dart';
 import '../screens/create_account_screen.dart';
+import '../screens/pin_screen.dart';
 
 var router = GoRouter(
   routes: [
@@ -17,6 +18,10 @@ var router = GoRouter(
     GoRoute(
       path: '/create_account_screen',
       builder: (context, state) => CreateAccountScreen(),
+    ),
+    GoRoute(
+      path: '/pin_screen',
+      builder: (context, state) => PinScreen(),
     ),
     GoRoute(
       path: '/home_screen',

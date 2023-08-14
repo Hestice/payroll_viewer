@@ -47,8 +47,8 @@ class _BuildShadowedTextFieldCommonState
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.2),
-                blurRadius: 6.0,
+                color: Colors.black.withOpacity(0.1),
+                blurRadius: 7.0,
                 offset: Offset(0, 4),
               ),
             ],
@@ -60,7 +60,7 @@ class _BuildShadowedTextFieldCommonState
             decoration: InputDecoration(
               hintText: widget.hintText,
               labelText: widget.labelText,
-              floatingLabelBehavior: FloatingLabelBehavior.always, // Position label always at the top
+              floatingLabelBehavior: FloatingLabelBehavior.always,
               labelStyle: TextStyle(color: Colors.black),
               hintStyle: TextStyle(color: Colors.grey.shade500),
               filled: true,
@@ -75,9 +75,7 @@ class _BuildShadowedTextFieldCommonState
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
-                borderSide: const BorderSide(
-                  color: Colors.black,
-                ),
+                borderSide: BorderSide(color: Colors.black),
               ),
             ),
             validator: widget.validator,
