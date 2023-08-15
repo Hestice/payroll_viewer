@@ -68,9 +68,43 @@ class _PinScreenScreenState extends State<PinScreen> {
                         ),
                         borderRadius: BorderRadius.all(Radius.circular(20))
                       ),
-                      child: PinInputWidget(),
+                      child: Column(
+                        children: [
+                          PinInputWidget(),
+                          SizedBox(height: 30.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  print('Proceed Clicked');
+                                },
+                                child: Text(
+                                'PROCEED',
+                                  style: TextStyle(color: Colors.grey.shade800),
+                                ),
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: Color(0xFF4890D2),
+                                  shape: CircleBorder(),
+                                ),
+                                onPressed: () {
+                                  // GoRouter.of(context).go('/pin_screen');
+                                  print('Proceed Button Clicked');
+                                },
+                                child: Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.white,
+                                  size: 24,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 10,),
+                        ],
+                      ),
                     ),
-                    
                   ]
                 ),
             ]
@@ -160,7 +194,6 @@ class _PinInputWidgetState extends State<PinInputWidget> {
               )
             ],
           ),
-          SizedBox(height: 40,),
         ],
       ),
     );

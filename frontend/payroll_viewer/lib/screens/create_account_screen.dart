@@ -139,7 +139,9 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                   children: [
                                     GestureDetector(
                                       onTap: () {
+                                        GoRouter.of(context).go('/pin_screen');
                                         print('Proceed Clicked');
+                                        //implement proceed functionality
                                       },
                                       child: Text(
                                       'PROCEED',
@@ -154,6 +156,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                       onPressed: () {
                                         GoRouter.of(context).go('/pin_screen');
                                         print('Proceed Button Clicked');
+                                        //implement proceed functionality
                                       },
                                       child: Icon(
                                         Icons.arrow_forward,
@@ -163,7 +166,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 30.0),
+                                SizedBox(height: 10.0),
                                 ],
                               ),
                               ),
