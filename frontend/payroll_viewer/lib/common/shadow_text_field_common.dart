@@ -7,6 +7,7 @@ class BuildShadowedTextFieldCommon extends StatefulWidget {
   final bool obscureText;
   final String? Function(String?) validator;
   final bool enabled;
+  final TextCapitalization textCapitalization;
 
   const BuildShadowedTextFieldCommon({
     required this.controller,
@@ -15,6 +16,7 @@ class BuildShadowedTextFieldCommon extends StatefulWidget {
     required this.obscureText,
     required this.validator,
     this.enabled = true,
+    this.textCapitalization = TextCapitalization.sentences,
   });
 
   @override
@@ -80,6 +82,7 @@ class _BuildShadowedTextFieldCommonState
             ),
             validator: widget.validator,
             autovalidateMode: AutovalidateMode.onUserInteraction,
+            textCapitalization: widget.textCapitalization, // Set the property here
             focusNode: _focusNode,
             enabled: widget.enabled,
           ),

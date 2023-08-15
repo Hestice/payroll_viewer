@@ -126,3 +126,23 @@ final dateValidator = ValidationBuilder().add((value) {
 
   return null;
 }).build();
+
+final fullNameValidator = ValidationBuilder().add((value) {
+  if (value == null || value.isEmpty) {
+    return 'Full name is required';
+  }
+
+  final capitalizedValue = value.replaceAllMapped(
+    RegExp(r'\b\w'),
+    (match) => match.group(0)!.toUpperCase(),
+  );
+
+  const fullNameRegex = r'^([A-Z][a-z.]*\s)*[A-Z][a-z.]*$'; // Include . for periods
+  final isValid = RegExp(fullNameRegex).hasMatch(capitalizedValue);
+
+  if (!isValid) {
+    return 'Please enter a valid full name with each word starting with a capital letter';
+  }
+
+  return null;
+}).build();

@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                             //Text field for password 
                             BuildTextFieldCommon(
-                                controller: emailController,
+                                controller: passwordController,
                                 hintText: 'Password',
                                 obscureText: true,
                                 validator: passwordValidator,

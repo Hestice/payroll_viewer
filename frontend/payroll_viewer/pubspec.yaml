@@ -71,6 +71,7 @@ flutter:
     - assets/elements/orange_corner_spot.png
     - assets/elements/yellow_edge_spot.png
     - assets/elements/security_icon.png
+    - assets/elements/email_sent_icon.png
     - assets/payroll.pdf
 
   # An image asset can refer to one or more resolution-specific "variants", see

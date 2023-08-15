@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../common/pin_display_common.dart';
+import '../common/pin_button_common.dart';
 class PinScreen extends StatefulWidget {
   const PinScreen({super.key});
 
@@ -195,28 +196,6 @@ class _PinInputWidgetState extends State<PinInputWidget> {
             ],
           ),
         ],
-      ),
-    );
-  }
-}
-
-class PinButton extends StatelessWidget {
-  final String text;
-  final VoidCallback onPressed;
-
-  PinButton({required this.text, required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric( vertical: 6, horizontal: 0),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        child: Text(text, style: TextStyle(fontSize: 15.0)),
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.all(10.0),
-          shape: CircleBorder(),
-        ),
       ),
     );
   }

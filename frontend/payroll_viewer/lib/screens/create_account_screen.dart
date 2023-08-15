@@ -74,7 +74,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                     hintText: 'juandelacruz@ncca.mail.gov.ph',
                                     labelText: 'NCCA Email',
                                     obscureText: false,
-                                    validator: emailValidator
+                                    validator: emailValidator,
                                     ),
 
                                   SizedBox(height: 16.0),
@@ -83,7 +83,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                     hintText: 'e.g. Juan Dela Cruz',
                                     labelText: 'Full Name',
                                     obscureText: false,
-                                    validator: alphabeticValidator
+                                    validator: fullNameValidator,
+                                    textCapitalization: TextCapitalization.words,
                                   ),
 
                                   SizedBox(height: 16.0),
