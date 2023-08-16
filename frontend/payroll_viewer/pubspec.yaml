@@ -66,6 +66,7 @@ flutter:
   assets:
     - assets/images/ncca_logo.png
     - assets/images/ncca_compact_logo.png
+    - assets/images/ncca_footer.png
     - assets/images/background.png
     - assets/elements/blue_corner_spot.png
     - assets/elements/orange_corner_spot.png

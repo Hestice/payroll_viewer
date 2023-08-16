@@ -45,7 +45,7 @@ class _PinScreenScreenState extends State<PinScreen> {
                 ),
                 Column(
                   children: [
-                    SizedBox(height: 70,),
+                    SizedBox(height: 50,),
                     Align(
                       alignment: Alignment.topCenter,
                         child: Image(
@@ -78,6 +78,8 @@ class _PinScreenScreenState extends State<PinScreen> {
                             children: [
                               GestureDetector(
                                 onTap: () {
+                                  //if successful, go to email sent screen
+                                  GoRouter.of(context).go('/email_sent_screen');
                                   print('Proceed Clicked');
                                 },
                                 child: Text(
@@ -91,7 +93,9 @@ class _PinScreenScreenState extends State<PinScreen> {
                                   shape: CircleBorder(),
                                 ),
                                 onPressed: () {
-                                  // GoRouter.of(context).go('/pin_screen');
+
+                                  //if successful, go to email sent screen
+                                  GoRouter.of(context).go('/email_sent_screen');
                                   print('Proceed Button Clicked');
                                 },
                                 child: Icon(

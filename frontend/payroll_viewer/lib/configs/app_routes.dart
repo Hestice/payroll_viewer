@@ -4,6 +4,7 @@ import '../screens/login_screen.dart';
 import '../screens/landing_screen.dart';
 import '../screens/create_account_screen.dart';
 import '../screens/pin_screen.dart';
+import '../screens/email_sent_screen.dart';
 
 var router = GoRouter(
   routes: [
@@ -22,6 +23,10 @@ var router = GoRouter(
     GoRoute(
       path: '/pin_screen',
       builder: (context, state) => PinScreen(),
+    ),
+    GoRoute(
+      path: '/email_sent_screen',
+      builder: (context, state) => EmailSentScreen(),
     ),
     GoRoute(
       path: '/home_screen',

@@ -234,6 +234,19 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   ),
                 ),
               ),
+              Padding(
+                    padding: 
+                    EdgeInsets.only(
+                      bottom: 20,
+                    ),
+                    child: 
+                      Align(
+                      alignment: Alignment.bottomCenter,
+                        child: Image(
+                          image: AssetImage('assets/images/ncca_footer.png'),
+                      ),
+                    ),
+                  ),
             ]
           ),
         ),
