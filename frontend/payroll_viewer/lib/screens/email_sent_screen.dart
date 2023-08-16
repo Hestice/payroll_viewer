@@ -103,7 +103,6 @@ class _EmailSentScreenState extends State<EmailSentScreen> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                //if successful, go to email sent screen
                                 GoRouter.of(context).go('/home_screen');
                                 print('Proceed Clicked');
                               },
@@ -118,8 +117,6 @@ class _EmailSentScreenState extends State<EmailSentScreen> {
                                 shape: CircleBorder(),
                               ),
                               onPressed: () {
-
-                                //if successful, go to email sent screen
                                 GoRouter.of(context).go('/home_screen');
                                 print('Proceed Button Clicked');
                               },

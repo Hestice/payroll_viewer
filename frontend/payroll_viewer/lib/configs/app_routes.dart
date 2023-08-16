@@ -5,6 +5,7 @@ import '../screens/landing_screen.dart';
 import '../screens/create_account_screen.dart';
 import '../screens/pin_screen.dart';
 import '../screens/email_sent_screen.dart';
+import '../screens/terms_and_conditions_screen.dart';
 
 var router = GoRouter(
   routes: [
@@ -27,6 +28,10 @@ var router = GoRouter(
     GoRoute(
       path: '/email_sent_screen',
       builder: (context, state) => EmailSentScreen(),
+    ),
+    GoRoute(
+      path: '/terms_and_conditions_screen',
+      builder: (context, state) => TermsAndConditionsScreen(),
     ),
     GoRoute(
       path: '/home_screen',
