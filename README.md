@@ -5,14 +5,14 @@ An NCCA Mobile app that allows payroll viewing for employees
 ## Recommended Tech Stack
 
 - Flutter
-- Laravel
+- Laravel (not yet used ATM)
 
 ## Development Software Requirement
 
 ### Software
 
 - Install [Git](https://git-scm.com/downloads)
-- Install [Xampp](https://www.apachefriends.org/download.html)
+- Install [Xampp](https://www.apachefriends.org/download.html) 
 - Install [VSCode](https://code.visualstudio.com/)
 - Install [Composer](https://getcomposer.org/download/)
 - Install [Flutter](https://docs.flutter.dev/get-started/install)
@@ -30,11 +30,11 @@ An NCCA Mobile app that allows payroll viewing for employees
 - Awesome Flutter Snippet
 - Material Icon Theme
 - Gitlens
-- PHP Intelephense
+- PHP Intelephense (not yet being used)
 
 ## Setting Development Environment
 
-### Local Laravel Deployment
+### Local Laravel Deployment (not yet being used)
 
 - Clone your fork project
 - Open VSCode and open the folder of `backend/supply_chain_api`

@@ -27,7 +27,7 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
             Stack(
               children: [
                 Container(
-                    margin: EdgeInsets.fromLTRB(30, 0, 30, 150),
+                    margin: EdgeInsets.fromLTRB(30, 20, 30, 150),
                     child: Stack(
                       children: [
                         Align(
