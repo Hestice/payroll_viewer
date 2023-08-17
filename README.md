@@ -5,7 +5,7 @@ An NCCA Mobile app that allows payroll viewing for employees
 ## Recommended Tech Stack
 
 - Flutter
-- Laravel
+- Laravel (not yet used ATM)
 
 ## Development Software Requirement
 
