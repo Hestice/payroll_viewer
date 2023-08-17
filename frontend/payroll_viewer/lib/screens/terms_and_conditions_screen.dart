@@ -166,7 +166,7 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
                           print('report problem Clicked');
                         },
                         child: Text(
-                        'Report Problem',
+                        'Report a Problem',
                           style: TextStyle(
                             color: Colors.white,
                             decoration: TextDecoration.underline,
