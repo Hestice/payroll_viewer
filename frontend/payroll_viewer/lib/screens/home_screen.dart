@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:go_router/go_router.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -10,18 +10,63 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('[Username]'),
-      ),
-      body: Container(
-        color: Color(0xFF4890D2), // Set the background color
-        child: ListView(
-          children: [
-            _requestPayroll(),
-            _payrollHistory(),
-            _payslipArchive(),
-          ],
+    return Container(
+      color: Color(0xFF4890D2),
+      child: Scaffold(
+      backgroundColor: Colors.transparent,
+        body: SafeArea(
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.topCenter,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _requestPayroll(),
+                      _payrollHistory(),
+                      _payslipArchive(),
+                    ],
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 10,
+                right: 5,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      '08 / 03/ 23',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      '11:55 am',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                )
+              ),
+              Positioned(
+                top: 10,
+                left: 5,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    shape: CircleBorder(),
+                  ),
+                  onPressed: () {
+                    GoRouter.of(context).go('/login_screen');
+                    print('Back Button Clicked');
+                  },
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: Color(0xFF4890D2),
+                    size: 24,
+                  ),
+                ),
+              ),
+            ]
+          ),
         ),
       ),
     );
