@@ -124,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.only(top:30,),
+          margin: EdgeInsets.only(top:50,),
           decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
@@ -134,34 +134,59 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: Column(
             children: [
-              Text('Good day, [name]!'),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
-                ),
-                onPressed: () {
-                  GoRouter.of(context).go('/payroll_screen');
-                  print('Back Button Clicked');
-                },
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Color(0xFF4890D2),
-                  size: 24,
+              Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  margin: EdgeInsets.fromLTRB( 30, 20, 0, 30, ),
+                  child: Text('Good day, [name]!'.toUpperCase()),
+                )
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 60),
+                width: double.infinity, // Make the button match the column's width
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.black,
+                    side: BorderSide(width: 1, color: Color(0xFFD1DBE5)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(7),
+                    ),
+                  ),
+                  onPressed: () {
+                    GoRouter.of(context).go('/payroll_screen');
+                    print('Request Payroll Clicked');
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10), // Adjust vertical padding
+                    child: Text('Request Payroll'),
+                  ),
                 ),
               ),
-              Text('Lorem Epsum Important Details  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare at enim eleifend euismod. Donec et purus ornare, imperdiet velit ut, luctus risus. Cras ante eros, '),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 60, vertical: 30),
+                child: Text(
+                  'Lorem Epsum Important Details  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare at enim eleifend euismod. Donec et purus ornare, imperdiet velit ut, luctus risus. Cras ante eros, ',
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(color: Color(0xFFB5B5B5),),
+                ),
+              ),
             ],
           ),
         ),
-         Positioned(
+        Positioned(
           top: 0,
           right: 30,
-            child: Container(
-            width: 70,
-            height: 70,
+          child: Container(
+            width: 100,
+            height: 100,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.grey,
+              color: Colors.white, // White circle
+              border: Border.all(
+                color: Colors.grey, // Gray outline color
+                width: 1.0, // Outline width
+              ),
             ),
           ),
         ),

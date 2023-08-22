@@ -119,7 +119,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   minimumSize: Size(223, 49),
                                 ),
                                 onPressed: () {
-                                  // Action for "Payroll" button
+                                  GoRouter.of(context).go('/home_screen');
                                 },
                                 child: Text(
                                   'Payroll',
