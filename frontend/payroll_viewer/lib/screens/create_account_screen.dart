@@ -31,6 +31,20 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
         body: SafeArea(
           child: Stack(
             children: [
+              //ncca footer
+              Padding(
+                padding: 
+                EdgeInsets.only(
+                  bottom: 20,
+                ),
+                child: 
+                  Align(
+                  alignment: Alignment.bottomCenter,
+                    child: Image(
+                      image: AssetImage('assets/images/ncca_footer.png'),
+                  ),
+                ),
+              ),
               Align(
                 alignment: Alignment.center,
                   child: SingleChildScrollView(
@@ -235,20 +249,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   ),
                 ),
               ),
-              //ncca footer
-              Padding(
-                    padding: 
-                    EdgeInsets.only(
-                      bottom: 20,
-                    ),
-                    child: 
-                      Align(
-                      alignment: Alignment.bottomCenter,
-                        child: Image(
-                          image: AssetImage('assets/images/ncca_footer.png'),
-                      ),
-                    ),
-                  ),
             ]
           ),
         ),
