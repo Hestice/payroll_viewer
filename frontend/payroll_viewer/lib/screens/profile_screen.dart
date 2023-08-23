@@ -23,25 +23,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
         body: SafeArea(
           child: Stack(
             children: [
+              // Time and Date Widget (Upper Right)
               Positioned(
                 top: 10,
-                left: 5,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF4890D2),
-                    shape: CircleBorder(),
-                  ),
-                  onPressed: () {
-                    GoRouter.of(context).go('/login_screen');
-                    print('Back Button Clicked');
-                  },
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                    size: 24,
-                  ),
+                right: 10,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      '08 / 03 / 23',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Text(
+                      '11:55 am',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
                 ),
               ),
+
               Align(
                 alignment: Alignment.center,
                 child: Stack(
@@ -99,7 +99,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           SizedBox(height: 20),
                           Container(
                             height: 0.5,
-                            color: Colors.black.withOpacity(0.16),
+                            color: Color.fromARGB(255, 255, 255, 255)
+                                .withOpacity(0.16),
                             margin: EdgeInsets.symmetric(vertical: 10),
                           ),
                           SizedBox(height: 20),
@@ -156,23 +157,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           Container(
                             height: 0.5,
-                            color: Colors.black.withOpacity(0.16),
+                            color: Color.fromARGB(255, 45, 45, 45)
+                                .withOpacity(0.16),
                             margin: EdgeInsets.symmetric(vertical: 10),
                           ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.black,
-                              onPrimary: Colors.white,
-                              shape: CircleBorder(),
-                              minimumSize: Size(61, 28),
-                            ),
-                            onPressed: () {
-                              // Action for logout button
-                            },
-                            child: Text(
-                              'Log out',
-                              style: TextStyle(
-                                color: Colors.white,
+                          // Logout Button (Lower Right)
+                          Positioned(
+                            bottom: 20,
+                            right: 20,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                primary: Colors.white,
+                                onPrimary: Color.fromRGBO(45, 90, 138, 0.22),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                    side: BorderSide(
+                                      color: Color.fromRGBO(45, 90, 138, 0.22),
+                                      width: 1.0,
+                                    )),
+                                minimumSize: Size(120, 49),
+                              ),
+                              onPressed: () {
+                                // Action for logout button
+                              },
+                              child: Text(
+                                'Log out',
+                                style: TextStyle(
+                                  color: const Color.fromARGB(255, 0, 0, 0),
+                                ),
                               ),
                             ),
                           ),
