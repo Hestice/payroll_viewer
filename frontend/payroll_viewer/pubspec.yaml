@@ -74,6 +74,7 @@ flutter:
     - assets/elements/security_icon.png
     - assets/elements/email_sent_icon.png
     - assets/elements/terms_icon.png
+    - assets/elements/pdf_icon.png
     - assets/payroll.pdf
 
   # An image asset can refer to one or more resolution-specific "variants", see

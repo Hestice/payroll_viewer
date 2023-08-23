@@ -11,6 +11,13 @@ class TermsAndConditionsScreen extends StatefulWidget {
 }
 
 class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
+  bool _isAgreed = false;
+  void _handleCheckboxChange(bool isChecked) {
+    setState(() {
+      _isAgreed = isChecked;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -79,7 +86,7 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            CheckboxCommon(),
+                                            CheckboxCommon(onChanged: _handleCheckboxChange,),
                                             Text(
                                               "I agree".toUpperCase(),
                                               style: TextStyle(
@@ -115,23 +122,29 @@ class _TermsAndConditionsScreenState extends State<TermsAndConditionsScreen> {
                             children: [
                               GestureDetector(
                                 onTap: () {
-                                  //if successful, go to email sent screen
-                                  GoRouter.of(context).go('/profile_screen');
+                                  if (_isAgreed) {
+                                    GoRouter.of(context).go('/profile_screen');
+                                  }
                                   print('Proceed Clicked');
                                 },
                                 child: Text(
                                   'PROCEED',
-                                  style: TextStyle(color: Colors.grey.shade800),
+                                  style: TextStyle(
+                                    color: _isAgreed ? Colors.grey.shade800 : Colors.grey.shade400,
+                                  ),
                                 ),
                               ),
                               ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                  primary: Color(0xFF4890D2),
+                                  primary: _isAgreed ? Color(0xFF4890D2) : Colors.grey.shade400,
                                   shape: CircleBorder(),
                                 ),
                                 onPressed: () {
                                   //if successful, go to email sent screen
-                                  GoRouter.of(context).go('/profile_screen');
+                                  if (_isAgreed) {
+                                    GoRouter.of(context).go('/profile_screen');
+                                    print('Proceed Clicked');
+                                  }
                                   print('Proceed Button Clicked');
                                 },
                                 child: Icon(

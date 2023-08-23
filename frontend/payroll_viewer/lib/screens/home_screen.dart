@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import '../common/payslip_item_common.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -67,11 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         _requestPayroll(),
                         SizedBox(height: 16,),
-                        _requestPayroll(),
-                        SizedBox(height: 16,),
-                        _requestPayroll(),
                         _payrollHistory(),
+                        SizedBox(height: 16,),
                         _payslipArchive(),
+                        PayslipItem(),
                       ],
                     ),
                   ),
@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     shape: CircleBorder(),
                   ),
                   onPressed: () {
-                    GoRouter.of(context).go('/login_screen');
+                    GoRouter.of(context).go('/profile_screen');
                     print('Back Button Clicked');
                   },
                   child: Icon(

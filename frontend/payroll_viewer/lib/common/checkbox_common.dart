@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+typedef CheckboxChangedCallback = void Function(bool isChecked);
 class CheckboxCommon extends StatefulWidget {
-  const CheckboxCommon({super.key});
+  final CheckboxChangedCallback onChanged;
+
+  const CheckboxCommon({required this.onChanged, Key? key}) : super(key: key);
 
   @override
   State<CheckboxCommon> createState() => _CheckboxCommonState();
@@ -32,6 +35,7 @@ class _CheckboxCommonState extends State<CheckboxCommon> {
         setState(() {
           isChecked = value!;
         });
+        widget.onChanged(isChecked);
       },
     );
   }
