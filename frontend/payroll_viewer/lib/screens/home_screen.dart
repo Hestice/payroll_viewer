@@ -71,7 +71,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         _payrollHistory(),
                         SizedBox(height: 16,),
                         _payslipArchive(),
-                        PayslipItem(),
                       ],
                     ),
                   ),
@@ -197,10 +196,43 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _payrollHistory() {
     return Container(
       padding: EdgeInsets.all(16),
-      child: Text(
-        'Section 2',
-        style: TextStyle(fontSize: 24, color: Colors.white),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(
+          color: Color(0xFFD1DBE5),
+        ),
+        borderRadius: BorderRadius.all(Radius.circular(20))
       ),
+      child:Column(
+        children: [
+          //children of rows
+          Row(
+            children: [
+              Image(image: AssetImage('assets/elements/pdf_icon.png')),
+              SizedBox(width: 20,),
+              PayslipItem()
+            ],
+          ),
+
+          SizedBox(height: 7,),
+          Row(
+            children: [
+              Image(image: AssetImage('assets/elements/pdf_icon.png')),
+              SizedBox(width: 20,),
+              PayslipItem()
+            ],
+          ),
+          
+          SizedBox(height: 7,),
+          Row(
+            children: [
+              Image(image: AssetImage('assets/elements/pdf_icon.png')),
+              SizedBox(width: 20,),
+              PayslipItem()
+            ],
+          ),
+        ],
+      )
     );
   }
 
