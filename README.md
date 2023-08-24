@@ -32,11 +32,11 @@ This documentation includes how to setup dev environment using visual studio cod
 - Awesome Flutter Snippet
 - Material Icon Theme
 - Gitlens
-- PHP Intelephense (If using PHP Laravel framework for backend, otherwise, skip to Local Flutter App Deployment.)
+- PHP Intelephense
 
 ## Setting Development Environment
 
-### Local Laravel Deployment (not yet being used)
+### Local Laravel Deployment (If using PHP Laravel framework for backend, otherwise, skip to Local Flutter App Deployment.)
 
 - Clone your fork project
 - Open VSCode and open the folder of `backend/supply_chain_api`
