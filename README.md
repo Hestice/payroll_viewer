@@ -1,6 +1,7 @@
 # NCCA MIS INTERNSHIP PROJECT: PAYROLL VIEWER
 
-An NCCA Mobile app that allows payroll viewing for employees. /n
+An NCCA Mobile app that allows payroll viewing for employees.
+
 This documentation includes how to setup dev environment using visual studio code, which is significantly more effective than using android studio IDE alone. Expect there will be some extensions to download for the VSCode IDE. To acquire an emulator, we will run Android studio just once ever, and configure an emulator from there. (I recommend to choose a system that is somewhere in between old and new)
 
 ## Recommended Tech Stack
