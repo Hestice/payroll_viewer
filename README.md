@@ -32,7 +32,7 @@ This documentation includes how to setup dev environment using visual studio cod
 - Awesome Flutter Snippet
 - Material Icon Theme
 - Gitlens
-- PHP Intelephense (not yet being used. If using PHP Laravel framework for backend, otherwise, this is optional.)
+- PHP Intelephense (If using PHP Laravel framework for backend, otherwise, skip to Local Flutter App Deployment.)
 
 ## Setting Development Environment
 
