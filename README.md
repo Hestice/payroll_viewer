@@ -1,6 +1,7 @@
 # NCCA MIS INTERNSHIP PROJECT: PAYROLL VIEWER
 
 An NCCA Mobile app that allows payroll viewing for employees
+This documentation includes how to setup dev environment using visual studio code, which is significantly more effective than using android studio IDE alone. Expect there will be some extensions to download for the VSCode IDE. To acquire an emulator, we will run Android studio just once ever, and configure an emulator from there. (I recommend to choose a system that is somewhere in between old and new)
 
 ## Recommended Tech Stack
 
@@ -30,7 +31,7 @@ An NCCA Mobile app that allows payroll viewing for employees
 - Awesome Flutter Snippet
 - Material Icon Theme
 - Gitlens
-- PHP Intelephense (not yet being used)
+- PHP Intelephense (not yet being used. If using PHP Laravel framework for backend, otherwise, this is optional.)
 
 ## Setting Development Environment
 
@@ -58,8 +59,8 @@ An NCCA Mobile app that allows payroll viewing for employees
 
 ### Local Flutter App Deployment
 
-- Open a new window of VSCode
-- Open the folder `frontend/supply_chain`
+- Open a new terminal
+- Navigate to the the folder `frontend/supply_chain`
 - Look to your left of VSCode interface and find the folder lib/configs
 - Click the file `global_config.dart`
 - Change the IP Address into your copied computer IP address `const SERVER_URL = "http://[PASTE COPIED IP ADDRESS]:8000/api";`
