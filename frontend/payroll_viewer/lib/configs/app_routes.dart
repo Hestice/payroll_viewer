@@ -8,6 +8,7 @@ import '../screens/pin_screen.dart';
 import '../screens/email_sent_screen.dart';
 import '../screens/terms_and_conditions_screen.dart';
 import '../screens/profile_screen.dart';
+import '../screens/viewer_screen.dart';
 
 var router = GoRouter(routes: [
   GoRoute(
@@ -42,6 +43,10 @@ var router = GoRouter(routes: [
   GoRoute(
     path: '/profile_screen',
     builder: (context, state) => ProfileScreen(),
+  ),
+  GoRoute(
+    path: '/viewer_screen',
+    builder: (context, state) => ViewerScreen(),
   ),
   //add other paths and routes to builders here
 ]);

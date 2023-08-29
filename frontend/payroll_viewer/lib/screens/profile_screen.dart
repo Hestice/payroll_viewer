@@ -144,7 +144,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   minimumSize: Size(223, 49),
                                 ),
                                 onPressed: () {
-                                  // Action for "Payslip Archive" button
+                                  GoRouter.of(context).go(
+                                      '/viewer_screen'); // Action for "Payslip Archive" button
                                 },
                                 child: Text(
                                   'Payslip Archive',
@@ -178,7 +179,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 minimumSize: Size(120, 49),
                               ),
                               onPressed: () {
-                                // Action for logout button
+                                GoRouter.of(context).go(
+                                    '/login_screen'); // Action for "Payslip Archive" button
                               },
                               child: Text(
                                 'Log out',
