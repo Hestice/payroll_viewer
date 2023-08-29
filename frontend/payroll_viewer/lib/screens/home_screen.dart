@@ -210,7 +210,19 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Image(image: AssetImage('assets/elements/pdf_icon.png')),
               SizedBox(width: 20,),
-              PayslipItem()
+              PayslipItem(
+                date: '08/21/23',
+                time: '02:31',
+                description: 'description',
+                onViewPressed: () {
+                  print('View Button Clicked');
+                  // Implement your view functionality here
+                },
+                onDownloadPressed: () {
+                  print('Download Button Clicked');
+                  // Implement your download functionality here
+                },
+              )
             ],
           ),
 
@@ -219,7 +231,19 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Image(image: AssetImage('assets/elements/pdf_icon.png')),
               SizedBox(width: 20,),
-              PayslipItem()
+              PayslipItem(
+                date: '08/21/23',
+                time: '02:31',
+                description: 'description',
+                onViewPressed: () {
+                  print('View Button Clicked');
+                  // Implement your view functionality here
+                },
+                onDownloadPressed: () {
+                  print('Download Button Clicked');
+                  // Implement your download functionality here
+                },
+              )
             ],
           ),
           
@@ -228,7 +252,19 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Image(image: AssetImage('assets/elements/pdf_icon.png')),
               SizedBox(width: 20,),
-              PayslipItem()
+              PayslipItem(
+                date: '08/21/23',
+                time: '02:31',
+                description: 'description',
+                onViewPressed: () {
+                  print('View Button Clicked');
+                  // Implement your view functionality here
+                },
+                onDownloadPressed: () {
+                  print('Download Button Clicked');
+                  // Implement your download functionality here
+                },
+              )
             ],
           ),
         ],
