@@ -239,9 +239,31 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _payslipArchive() {
     return Container(
       padding: EdgeInsets.all(16),
-      child: Text(
-        'Section 3',
-        style: TextStyle(fontSize: 24, color: Colors.white),
+      child: Positioned(
+        bottom: 20,
+        right: 20,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.white,
+            onPrimary: Color.fromRGBO(45, 90, 138, 0.22),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+                side: BorderSide(
+                  color: Color.fromRGBO(45, 90, 138, 0.22),
+                  width: 1.0,
+                )),
+            minimumSize: Size(120, 49),
+          ),
+          onPressed: () {
+            // Action for logout button
+          },
+          child: Text(
+            'Log out',
+            style: TextStyle(
+              color: const Color.fromARGB(255, 0, 0, 0),
+            ),
+          ),
+        ),
       ),
     );
   }

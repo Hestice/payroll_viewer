@@ -22,79 +22,95 @@ class _PayslipItemState extends State<PayslipItem> {
           ),
           borderRadius: BorderRadius.all(Radius.circular(20))
         ),
-        
+    
         child: Row(
           mainAxisAlignment:MainAxisAlignment.spaceBetween,
-          children: [
-            if (showButtons)
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        print('View Button Clicked');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: Color(0xFFA3D57C),
-                        onPrimary: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 1),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
+            children: [
+              AnimatedSwitcher(
+                duration: Duration(milliseconds: 250), // Animation duration
+                child: showButtons
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          width: 60.0,
+                          height: 40.0,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              print('View Button Clicked');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(0xFFA3D57C),
+                              onPrimary: Colors.white,
+                              padding: const EdgeInsets.symmetric(vertical: 1),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                            child: Text('View'),
+                          ),
                         ),
-                      ),
-                      child: Text('View'),
-                    ),
-                    SizedBox(width: 5),
-                    ElevatedButton(
-                      onPressed: () {
-                        print('Download Button Clicked');
-                      },
-                      child: Text('Download'),
-                      style: ElevatedButton.styleFrom(
-                        primary:Color.fromARGB(255, 255, 125, 81),
-                        onPrimary: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 10),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
+                        SizedBox(width: 5),
+                        SizedBox(
+                          width: 90,
+                          height: 40.0,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              print('Download Button Clicked');
+                            },
+                            child: Text('Download'),
+                            style: ElevatedButton.styleFrom(
+                              primary: Color.fromARGB(255, 255, 125, 81),
+                              onPrimary: Colors.white,
+                              padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 10),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  ],
-                )
-              else
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                      ],
+                    )
+                  : Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('08/21/23'),
-                          Text('  |  '),
-                          Text('02:31'),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text('08/21/23'),
+                              Text('  |  '),
+                              Text('02:31'),
+                            ],
+                          ),
+                          Text('Description'),
                         ],
                       ),
-                      Text('Description'),
-                    ],
-                  ),
-                ),
-            GestureDetector(
+                    ),
+              ),
+              GestureDetector(
                 onTap: () {
                   setState(() {
                     showButtons = !showButtons; // Toggle button visibility
                   });
                 },
-                child: showButtons
+                child: AnimatedSwitcher(
+                  duration: Duration(milliseconds: 250), // Animation duration
+                  child: showButtons
                     ? Icon(
                         Icons.arrow_back,
                         size: 30,
+                        key: UniqueKey(), // Provide a unique key for each child
                       )
                     : Icon(
                         Icons.more_vert,
                         size: 30,
+                        key: UniqueKey(), // Provide a unique key for each child
                       ),
-              ),  
+                ),
+              ),
             ],
+
           )
       )
     );
