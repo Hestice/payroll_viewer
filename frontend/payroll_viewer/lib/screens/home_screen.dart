@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../common/payslip_item_common.dart';
+import '../screens/pdf_view_screen.dart';
+import '../services/pdf_api_service.dart';
+import '../models/document_info.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -59,8 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 margin: EdgeInsets.fromLTRB(30, 80, 30, 120),
                 // decoration: BoxDecoration(
                 //         border: Border.all(width: 1.0, color: Color.fromARGB(255, 255, 0, 0)),
-                // ), 
-                //FOR DEBUGGING PURPOSES ONLY
+                // ), FOR DEBUGGING PURPOSES ONLY
                 child: Align (
                   alignment: Alignment.topCenter,
                   child: SingleChildScrollView(
@@ -70,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(height: 16,),
                         _payrollHistory(),
                         SizedBox(height: 16,),
-                        _payslipArchive(),
+                        _logout(),
                       ],
                     ),
                   ),
@@ -203,76 +205,43 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         borderRadius: BorderRadius.all(Radius.circular(20))
       ),
-      child:Column(
-        children: [
-          //children of rows
-          Row(
-            children: [
-              Image(image: AssetImage('assets/elements/pdf_icon.png')),
-              SizedBox(width: 20,),
-              PayslipItem(
-                date: '08/21/23',
-                time: '02:31',
-                description: 'description',
-                onViewPressed: () {
-                  print('View Button Clicked');
-                  // Implement your view functionality here
-                },
-                onDownloadPressed: () {
-                  print('Download Button Clicked');
-                  // Implement your download functionality here
-                },
-              )
-            ],
-          ),
+      child: Column(
+        children: Document.doc_list.asMap().entries.map((entry) {
+          final index = entry.key;
+          final doc = entry.value;
 
-          SizedBox(height: 7,),
-          Row(
+          return Column(
             children: [
-              Image(image: AssetImage('assets/elements/pdf_icon.png')),
-              SizedBox(width: 20,),
-              PayslipItem(
-                date: '08/21/23',
-                time: '02:31',
-                description: 'description',
-                onViewPressed: () {
-                  print('View Button Clicked');
-                  // Implement your view functionality here
-                },
-                onDownloadPressed: () {
-                  print('Download Button Clicked');
-                  // Implement your download functionality here
-                },
-              )
+              Row(
+                children: [
+                  Image(image: AssetImage('assets/elements/pdf_icon.png')),
+                  SizedBox(width: 20),
+                  PayslipItem(
+                    date: doc.doc_date ?? '',
+                    time: doc.doc_time ?? '', // You can replace this with your own time value
+                    description: doc.doc_title ?? '',
+                    onViewPressed: () async {
+                      print('View Button Clicked');
+                      final file = await PDFApi.loadNetwork(doc.doc_link);
+                      openPDF(context, file);
+                    },
+                    onDownloadPressed: () {
+                      print('Download Button Clicked');
+                      // Implement your download functionality here
+                    },
+                  ),
+                ],
+              ),
+              if (index != Document.doc_list.length - 1) SizedBox(height: 7), // Add vertical space except for the last item
             ],
-          ),
-          
-          SizedBox(height: 7,),
-          Row(
-            children: [
-              Image(image: AssetImage('assets/elements/pdf_icon.png')),
-              SizedBox(width: 20,),
-              PayslipItem(
-                date: '08/21/23',
-                time: '02:31',
-                description: 'description',
-                onViewPressed: () {
-                  print('View Button Clicked');
-                  // Implement your view functionality here
-                },
-                onDownloadPressed: () {
-                  print('Download Button Clicked');
-                  // Implement your download functionality here
-                },
-              )
-            ],
-          ),
-        ],
+          );
+        }).toList(),
       )
+
     );
   }
 
-  Widget _payslipArchive() {
+  Widget _logout() {
     return Container(
       padding: EdgeInsets.all(16),
       child: Positioned(
@@ -303,4 +272,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+   void openPDF(BuildContext context, file) => Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => PDFViewerPage(file: file)),
+      );
 }
