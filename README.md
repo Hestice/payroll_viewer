@@ -32,31 +32,6 @@ This documentation includes how to setup dev environment using visual studio cod
 - Awesome Flutter Snippet
 - Material Icon Theme
 - Gitlens
-- PHP Intelephense
-
-## Setting Development Environment
-
-### Local Laravel Deployment (If using PHP Laravel framework for backend, otherwise, skip to Local Flutter App Deployment.)
-
-- Clone your fork project
-- Open VSCode and open the folder of `backend/supply_chain_api`
-- Make sure xampp Apache and MySQL is turned on.
-- Open a browser and goto `localhost/phpmyadmin`.
-- Create a new database and name it as `db_supply_chain`
-- Ask your mentor for an .env file.
-- Change the .env file.
-
-  - `DB_DATABASE=db_supply_chain`
-  - `DB_USERNAME=root`
-  - `DB_PASSWORD=`
-
-- Copy and paste the .env file under supply_chain_api folder (name it as is `.env`).
-- Open a terminal in VSCode and type the command `composer install`.
-- Type the command `php artisan migrate`.
-- Type the command `php artisan key:generate`.
-- Type the command `ipconfig`.
-- Copy your computer IP address.
-- Type the command `php artisan serv --host=[PASTE COPIED IP ADDRESS] --port=8000`.
 
 ### Local Flutter App Deployment
 
