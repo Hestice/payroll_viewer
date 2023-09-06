@@ -45,5 +45,5 @@ This documentation includes how to setup dev environment using visual studio cod
 
 ### Notes
 
-- The 2 application (Laravel and Flutter) should be running at the same time.
-- Make sure your mobile and PC are connected in the same network or same wifi.
+- When using laravel for backend, the 2 applications (Laravel and Flutter) should be running at the same time.
+- When using laravel for backend, Make sure the mobile and PC are connected in the same network or same wifi.
