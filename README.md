@@ -61,10 +61,10 @@ This documentation includes how to setup dev environment using visual studio cod
 ### Local Flutter App Deployment
 
 - Open a new terminal
-- Navigate to the the folder `frontend/supply_chain`
-- Look to your left of VSCode interface and find the folder lib/configs
-- Click the file `global_config.dart`
-- Change the IP Address into your copied computer IP address `const SERVER_URL = "http://[PASTE COPIED IP ADDRESS]:8000/api";`
+- Navigate to the the folder `frontend/payroll_viewer`
+- (Optional) Look to your left of VSCode interface and find the folder lib/configs
+-   Click the file `global_config.dart`
+-   Change the IP Address into your copied computer IP address `const SERVER_URL = "http://[PASTE COPIED IP ADDRESS]:8000/api";`
 - Run your android emulator or mobile.
 - Open VSCode terminal and type the command flutter run.
 
